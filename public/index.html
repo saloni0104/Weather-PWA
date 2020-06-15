@@ -18,6 +18,13 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <script> //PWA SERVICE WORKER TO LOAD STUFF AND PUSH NOTIFICATIONS ETC. FOR APP
+      if('serviceWorker' in navigator) {   //To check if we have access to service worker
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./serviceworker');
+        })
+      }
+    </script>
     
   </body>
 </html>
