@@ -20,8 +20,8 @@ self.addEventListener('fetch', (event) => {
     event.respondWith(
         caches.match(event.request)
             .then(() => {
-                return fetch(event.request) 
-                    .catch(() => caches.match('offline.html'))
+                return fetch(event.request)     //after matching requests, fetches them
+                    .catch(() => caches.match('offline.html'))    //if unable to fetch due to no internet
             })
     )
 });
