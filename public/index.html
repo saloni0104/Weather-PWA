@@ -11,7 +11,7 @@
     />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />-->
     
     <title>React App</title>
   </head>
@@ -21,7 +21,7 @@
     <script> //PWA SERVICE WORKER TO LOAD STUFF AND PUSH NOTIFICATIONS ETC. FOR APP
       if('serviceWorker' in navigator) {   //To check if we have access to service worker
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./serviceworker')
+          navigator.serviceWorker.register('./serviceworker.js')
               .then((reg) => console.log('Success:' , reg.scope))
               .catch((err) => console.log('Failure:', err));          //loading or registering service worker
         })     
