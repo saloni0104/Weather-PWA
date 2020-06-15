@@ -21,8 +21,10 @@
     <script> //PWA SERVICE WORKER TO LOAD STUFF AND PUSH NOTIFICATIONS ETC. FOR APP
       if('serviceWorker' in navigator) {   //To check if we have access to service worker
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('./serviceworker');
-        })
+          navigator.serviceWorker.register('./serviceworker')
+              .then((reg) => console.log('Success:' , reg.scope))
+              .catch((err) => console.log('Failure:', err));          //loading or registering service worker
+        })     
       }
     </script>
     
